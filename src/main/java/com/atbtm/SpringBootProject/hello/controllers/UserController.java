@@ -46,9 +46,9 @@ public class UserController {
     @RequestMapping(value="/{id}", method=RequestMethod.PUT) 
 	public User putUser(@PathVariable Long id, @ModelAttribute User user) {
 		User u = users.get(id);
-		//u.setName(user.getName());
+		u.setName(user.getName());
 		u.setId(user.getId());
-		//u.setAge(user.getAge());
+		u.setAge(user.getAge());
 		users.put(id, u);
 		return u;
 	}

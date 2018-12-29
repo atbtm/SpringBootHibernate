@@ -22,6 +22,7 @@ public class UserServiceTests {
 	
 	@Before
 	public void setup() {
+		userService.createUserTable();
 		userService.deleteAllUsers();
 	}
 	

@@ -28,6 +28,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public void createUserTable() {
+		this.jdbcTemplate.update("create table USER(name varchar(30), age int(10))");
+	}
+
+	@Override
 	public void deleteAllUsers() {
 		this.jdbcTemplate.update("delete from USER");
 	}

@@ -8,4 +8,6 @@ public interface UserService {
 	Integer getAllUsers();
 	
 	void deleteAllUsers();
+
+	void createUserTable();
 }

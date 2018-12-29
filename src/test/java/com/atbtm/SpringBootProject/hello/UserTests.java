@@ -19,20 +19,20 @@ public class UserTests {
 
 	@Test
 	public void test() throws Exception {
-		userRepository.save(User.of("AAA", 10));
-		userRepository.save(User.of("AAA", 1110));
-		userRepository.save(User.of("BBB", 20));
-		userRepository.save(User.of("CCC", 30));
-		userRepository.save(User.of("DDD", 40));
-		userRepository.save(User.of("EEE", 50));
-		userRepository.save(User.of("FFF", 60));
-		userRepository.save(User.of("GGG", 70));
-		userRepository.save(User.of("HHH", 80));
-		userRepository.save(User.of("III", 90));
-		userRepository.save(User.of("JJJ", 100));
+		userRepository.save(new User("AAA", 10));
+		//userRepository.save(new User("AAA", 1110));
+		userRepository.save(new User("BBB", 20));
+		userRepository.save(new User("CCC", 30));
+		userRepository.save(new User("DDD", 40));
+		userRepository.save(new User("EEE", 50));
+		userRepository.save(new User("FFF", 60));
+		userRepository.save(new User("GGG", 70));
+		userRepository.save(new User("HHH", 80));
+		userRepository.save(new User("III", 90));
+		userRepository.save(new User("JJJ", 100));
 		
 		// assert user count
-		Assert.assertEquals(11, userRepository.findAll().size());
+		Assert.assertEquals(10, userRepository.findAll().size());
 		
 		//
 		Assert.assertEquals(60, userRepository.findByName("FFF").getAge().longValue());
@@ -43,6 +43,6 @@ public class UserTests {
 		
 		userRepository.delete(userRepository.findByName("AAA"));
 		
-		Assert.assertEquals(10, userRepository.findAll().size());
+		Assert.assertEquals(9, userRepository.findAll().size());
 	}
 }
