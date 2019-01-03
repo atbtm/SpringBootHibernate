@@ -1,1 +1,8 @@
 docker run --name test -e MYSQL_ROOT_PASSWORD=admin -p 3306:3306 -d mysql:5.5
+
+
+
+
+
+# redis docker image
+docker run -p 6379:6379 --name some-redis -d redis
